@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("PraktikaFurniture")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.0+91d180c762533aa98a6abc41b989801afb4d8e28")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.2.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.2.0.0+3d8e746a5cda0def839787cf00c04ee2afd01dac")]
 [assembly: System.Reflection.AssemblyProductAttribute("PraktikaFurniture")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PraktikaFurniture")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.2.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

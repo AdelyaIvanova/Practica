@@ -57,23 +57,23 @@ namespace PraktikaFurniture
 
         private void GlobalUnhandledExceptionHandler(object sender, UnhandledExceptionEventArgs e)
         {
-            //Exception ex = (Exception)e.ExceptionObject;
+            Exception ex = (Exception)e.ExceptionObject;
 
-            //string exception = ex.Message + "\n" + ex.GetBaseException() + "\n" + ex.InnerException + "\n" + ex.Source;
-            //SendMessage(exception);
-            //MessageBox.Show("Сообщение об ошибке отправлено в поддержку!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
-            //try
-            //{
-            //    Process.Start(new ProcessStartInfo
-            //    {
-            //        FileName = "cmd.exe",
-            //        Arguments = $"/c taskkill /f /im \"{AppDomain.CurrentDomain.FriendlyName + ".exe"}\" && timeout /t 1 && {Process.GetCurrentProcess().MainModule.FileName}",
-            //        UseShellExecute = false,
-            //        RedirectStandardOutput = true,
-            //        CreateNoWindow = true,
-            //    });
-            //}
-            //catch (Exception exс) { MessageBox.Show(exс.Message); }
+            string exception = ex.Message + "\n" + ex.GetBaseException() + "\n" + ex.InnerException + "\n" + ex.Source;
+            SendMessage(exception);
+            MessageBox.Show("Сообщение об ошибке отправлено в поддержку!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    Arguments = $"/c taskkill /f /im \"{AppDomain.CurrentDomain.FriendlyName + ".exe"}\" && timeout /t 1 && {Process.GetCurrentProcess().MainModule.FileName}",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true,
+                });
+            }
+            catch (Exception exс) { MessageBox.Show(exс.Message); }
         }
         private static void SendMessage(string exception)
         {
