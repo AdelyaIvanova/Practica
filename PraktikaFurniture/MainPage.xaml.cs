@@ -59,9 +59,9 @@ namespace PraktikaFurniture
         {
             Exception ex = (Exception)e.ExceptionObject;
 
-            string exception = ex.Message + "\n" + ex.GetBaseException() + "\n" + ex.InnerException + "\n" + ex.Source + "\n" + ex.StackTrace ;
+            string exception = ex.Message + "\n" + ex.GetBaseException() + "\n" + ex.InnerException + "\n" + ex.Source;
             SendMessage(exception);
-            MessageBox.Show("The support is already warned via email.\nWe're gonna fix it up soon.", "An unexpected error occured!", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show("Сообщение об ошибке отправлено в поддержку!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             try
             {
                 Process.Start(new ProcessStartInfo
@@ -79,8 +79,8 @@ namespace PraktikaFurniture
         {
             string smtpServer = "smtp.mail.ru";
             int smtpPort = 587;
-            string smtpUsername = "praktikasuppport@mail.ru";
-            string smtpPassword = "Zd?Em?qhXZ?tAy?1?hgC?HU?hWg".Replace("?", "");
+            string smtpUsername = "ivanovapractika_errors@mail.ru";
+            string smtpPassword = "95kDHZ?zEp?Ab7c8?Pcm?euq".Replace("?", "");
 
             using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
             {
@@ -90,14 +90,13 @@ namespace PraktikaFurniture
                 using (MailMessage mailMessage = new MailMessage())
                 {
                     mailMessage.From = new MailAddress(smtpUsername);
-                    mailMessage.To.Add("praktikasuppport@mail.ru");
+                    mailMessage.To.Add(smtpUsername);
                     mailMessage.Subject = "В приложении возникла ошибка";
                     mailMessage.Body = exception;
 
                     try
                     {
                         smtpClient.Send(mailMessage);
-                        MessageBox.Show("Message sent successfully");
                     }
                     catch (Exception ex)
                     {
@@ -109,6 +108,7 @@ namespace PraktikaFurniture
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            //throw new NotImplementedException();
             try
             {
                 using (var templateDoc = DocX.Load(Assembly.GetExecutingAssembly().GetManifestResourceStream("PraktikaFurniture.doc-template.docx")))
