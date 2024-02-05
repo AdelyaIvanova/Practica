@@ -1,5 +1,5 @@
 ﻿PraktikaFurniture
-1.0.0.1
+1.0.0.0
 
 winexe
 C#
@@ -16,5 +16,5 @@ C:\Users\abely\Desktop\шарага\уч.практика\Новая папка\
 2481843645240
 MainPage.xaml;MainWindow.xaml;UpdaterWindow.xaml;
 
-True
+False
 
