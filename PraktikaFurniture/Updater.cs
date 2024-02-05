@@ -24,9 +24,9 @@ namespace PraktikaFurniture
                 ExeName = AppDomain.CurrentDomain.FriendlyName + ".exe";
                 ExePath = Process.GetCurrentProcess().MainModule.FileName;
 
-                GitClient = new GitHubClient(new ProductHeaderValue("praktika-furniture"))
-                { Credentials = new Credentials("ghp_BHmZn?Xe?QCU1?Il11?s?T0ee?W3H?Ilq7?56r?2?UCU?2O".Replace("?", "")) };
-                Releases = GitClient.Repository.Release.GetAll("lasedra", "PraktikaFurniture");
+                GitClient = new GitHubClient(new ProductHeaderValue("praktika-jewelry"))
+                { Credentials = new Credentials("gh?p_LB?kRkrTc?uzdYRLdYCEZ?wP?phZ59?XmAk1M?24c4".Replace("?", "")) };
+                Releases = GitClient.Repository.Release.GetAll("AdelyaIvanova", "Practica");
             }
         }
 
